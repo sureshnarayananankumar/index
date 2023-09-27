@@ -1,0 +1,128 @@
+Vivek P
+const str = "Welcome to this Javascript Guide!";
+const charCount = {};
+
+for (const char of str) {
+ if (char !== ' ' && charCount[char]) {
+   charCount[char]++;
+ } else {
+   charCount[char] = 1;
+ }
+}
+
+console.log("Duplicate characters:");
+
+for (const char in charCount) {
+ if (charCount[char] > 1) {
+   console.log(`${char}: ${charCount[char]} times`);
+ }
+}
+``````````````````````````````
+5.let ar = [2, 3, -1, 5, 7, 9, 10, 15, 95];
+let sum = 0;
+
+for (let i = 0; i < ar.length; i++) {
+ sum += ar[i];
+}
+
+console.log("Sum of the numbers in the array:", sum);
+`````````````````````
+6.const passengers = [
+ {
+   id: 1,
+   passengerName: "Freddie Mercury",
+   isVegetarianOrVegan: false,
+   connectedFlights: 2,
+ },
+ {
+   id: 2,
+   passengerName: "Amy Winehouse",
+   isVegetarianOrVegan: true,
+   connectedFlights: 4,
+ },
+ {
+   id: 3,
+   passengerName: "Kurt Cobain",
+   isVegetarianOrVegan: true,
+   connectedFlights: 3,
+ },
+ {
+   id: 4,
+   passengerName: "Michael Jackson",
+
+   isVegetarianOrVegan: true,
+   connectedFlights: 1,
+ },
+];
+
+function findPassengerByConnectedFlights(passengerArray, targetConnectedFlights) {
+ return passengerArray.find(passenger => passenger.connectedFlights === targetConnectedFlights);
+}
+
+const targetConnectedFlights = 3;
+const passengerWithTargetFlights = findPassengerByConnectedFlights(passengers, targetConnectedFlights);
+
+if (passengerWithTargetFlights) {
+ console.log(`Passenger with ${targetConnectedFlights} connected flights:`);
+ console.log(passengerWithTargetFlights);
+} else {
+ console.log(`No passenger found with ${targetConnectedFlights} connected flights.`);
+}
+---------------------------------------
+7.function getPositiveNumbers(arr) {
+ return arr.filter(num => num > 0);
+}
+
+let ar = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+let positiveNumbers = getPositiveNumbers(ar);
+
+console.log(positiveNumbers);
+``````````````````````````
+8.let ar = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+
+function findMaxNumber(arr) {
+ if
+(arr.length === 0) {
+   return undefined; // Return undefined for an empty array
+ }
+
+ let max = arr[0]; // Assume the first element is the maximum
+
+ for (let i = 1; i < arr.length; i++) {
+   if (arr[i] > max) {
+     max = arr[i]; // Update max if a larger element is found
+   }
+ }
+
+ return max;
+}
+
+let maxNumber = findMaxNumber(ar);
+console.log("The maximum number is:", maxNumber);
+````````````````````
+9.function mergeArrays(arr1, arr2) {
+ return arr1.concat(arr2);
+}
+
+let ar1 = [1, 2, 3];
+let ar2 = [4, 5, 6];
+
+let mergedArray = mergeArrays(ar1, ar2);
+console.log(mergedArray);  
+``````````````````
+10.function countWords(text) {
+ // Trim leading and trailing spaces and then split the text by spaces
+ const words = text.trim().split(/\s+/);
+
+ // Filter out empty strings that might result from consecutive spaces
+ const nonEmptyWords = words.filter(word => word !== '');
+
+ return nonEmptyWords.length;
+}
+
+console.log(countWords("JavaScript!!!   "));  // Output: 1
+
+console.log(countWords("     JavaScript"));  // Output: 1
+console.log(countWords("    JavaScript is cool      "));  // Output: 3
+console.log(countWords("I like to learn JavaScript with codeguppy"));
+17-08-2023 15:21

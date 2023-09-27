@@ -1,0 +1,6 @@
+function countBtn() {
+var buttons = document.getElementsByTagName("h1");
+return buttons.length;
+}
+var btnCount = countBtn();
+console.log("Number of button:- " + btnCount);
